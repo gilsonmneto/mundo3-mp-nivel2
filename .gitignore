@@ -1,0 +1,7 @@
+*/out/
+*/.idea/
+*/saved.*
+*/*.iml
+.idea/
+out/
+*.docx
