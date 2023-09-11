@@ -1,4 +1,4 @@
-/* a. Dados completos de pessoas físicas */
+/* a. Dados completos de pessoas fisicas */
 SELECT 
 	idpessoa, 
 	nome, 
@@ -17,7 +17,7 @@ WHERE
 	idpessoa = Pessoa_idPessoa
 
 
-/* b. Dados completos de pessoas jurídicas */
+/* b. Dados completos de pessoas jurï¿½dicas */
 SELECT
 	idpessoa, 
 	nome, 
@@ -36,13 +36,13 @@ WHERE
 	idPessoa = Pessoa_idPessoa
 
 
-/* c. Movimentações de entrada, com produto, fornecedor, quantidade, preço unitário e valor total */
+/* c. Movimentaï¿½ï¿½es de entrada, com produto, fornecedor, quantidade, preï¿½o unitï¿½rio e valor total */
 SELECT
-    mov.tipo AS TIPO_MOVIMENTAÇÃO,
+    mov.tipo AS TIPO_MOVIMENTAï¿½ï¿½O,
     pro.nome AS PRODUTO,
 	pes.nome AS FORNECEDOR,
     mov.quantidade AS QUANTIDADE,
-    mov.valorUnitario AS VALOR_UNITÁRIO,
+    mov.valorUnitario AS VALOR_UNITï¿½RIO,
     (mov.quantidade * mov.valorUnitario) AS VALOR_TOTAL
 FROM
     dbo.Movimento AS mov
@@ -54,13 +54,13 @@ WHERE
     tipo = 'E';
 
 
-/* d. Movimentações de saída, com produto, comprador, quantidade, preço unitário e valor total */
+/* d. Movimentaï¿½ï¿½es de saï¿½da, com produto, comprador, quantidade, preï¿½o unitï¿½rio e valor total */
 SELECT
-    mov.tipo AS TIPO_MOVIMENTAÇÃO,
+    mov.tipo AS TIPO_MOVIMENTAï¿½ï¿½O,
     pro.nome AS PRODUTO,
 	pes.nome AS COMPRADOR,
     mov.quantidade AS QUANTIDADE,
-    mov.valorUnitario AS VALOR_UNITÁRIO,
+    mov.valorUnitario AS VALOR_UNITï¿½RIO,
     (mov.quantidade * mov.valorUnitario) AS VALOR_TOTAL
 FROM
     dbo.Movimento AS mov
@@ -89,7 +89,7 @@ GROUP BY
     pro.nome
 
 
-/* f. Valor total das saídas agrupadas por produto */
+/* f. Valor total das saï¿½das agrupadas por produto */
 SELECT
     pro.nome AS PRODUTO_SAIDA,
     SUM(mov.quantidade) AS QTDE_TOTAL,
@@ -106,7 +106,7 @@ GROUP BY
     pro.nome
 
 
-/* g. Operadores que não efetuaram movimentações de entrada (compra) */
+/* g. Operadores que nï¿½o efetuaram movimentaï¿½ï¿½es de entrada (compra) */
 SELECT
 	usu.login AS OPERADOR
 FROM
@@ -140,7 +140,7 @@ GROUP BY
     usu.login
 
 
-/* i. Valor total de saída, agrupado por operador */
+/* i. Valor total de saï¿½da, agrupado por operador */
 SELECT
     usu.login AS OPERADOR_SAIDA,
     SUM(mov.quantidade) AS QTDE_TOTAL,
@@ -158,7 +158,7 @@ GROUP BY
     usu.login
 
 
-/* j. Valor médio de venda por produto, utilizando média ponderada */
+/* j. Valor mï¿½dio de venda por produto, utilizando mï¿½dia ponderada */
 SELECT
     pro.nome AS PRODUTO_SAIDA,
     SUM(mov.quantidade) AS QTDE_TOTAL,
