@@ -216,5 +216,4 @@ $RECYCLE.BIN/
 
 # add your custom gitignore here:
 *.docx
-pessoas_fisicas.dat
-pessoas_juridicas.dat
+.idea/
